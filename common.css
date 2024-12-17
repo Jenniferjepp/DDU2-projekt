@@ -46,9 +46,32 @@ p {
     width: 60px;
 }
 
-input {
+#how-many-input {
     height: 30px;
     width: 60px;
     border: 2px solid saddlebrown;
     border-radius: 5px;
+}
+
+
+#divs-box {
+    margin: 20px 50px;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.divis {
+
+    background-color: seashell;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
