@@ -1,0 +1,16 @@
+#add-up-input {
+    width: 80px;
+}
+
+#ad-up-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+.green {
+    background-color: honeydew;
+}
