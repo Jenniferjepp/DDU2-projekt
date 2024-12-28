@@ -1,7 +1,7 @@
 const div1DOM = document.querySelector("#div1");
 const div2DOM = document.querySelector("#div2");
 
-createButtonDOM.addEventListener("click", function (){
+function everythingOnThisSite () {
     const allDivs = document.querySelectorAll(".divis");
     // Set() tar automatiskt bort dubletter!
     const allDivsSet = new Set();
@@ -56,4 +56,13 @@ createButtonDOM.addEventListener("click", function (){
     
     div2DOM.textContent = allDivsArray.join(", ");
     div1DOM.textContent = `${mostRepeatedNumbers.join(", ")} (Repeated ${maxCount} times)`;
+};
+
+// när "create"-knappen klickas så anropas funktionen som gör allt som ska hända på sidan.
+createButtonDOM.addEventListener("click", function () {
+    everythingOnThisSite();
 });
+
+// eventet "load" gör att webbläsaren inte kör funktionen förens allt annat (viktigast i detta fallet är att alla divar skapats) har körts, inklusive HTML, CSS och annan JS.
+// window är ett objekt som representerar hela webbläsar-fönstret! Allt som syns i fönstret (HTML, CSS, JS)
+window.addEventListener("load", everythingOnThisSite);
