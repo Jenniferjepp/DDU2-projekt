@@ -6,8 +6,9 @@
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    color: white;
+    
    padding: 10px;
+   background-color: rgb(252, 227, 206);
 }
 
 #repetitions-box1, #repetitions-box2 {
@@ -16,6 +17,7 @@
     justify-content: center;
     margin-top: 20px;
     gap: 10px;
+    
 }
 
 

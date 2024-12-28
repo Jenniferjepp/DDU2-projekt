@@ -21,11 +21,39 @@ createButtonDOM.addEventListener("click", function (){
         }
     }
     console.log(numberCount);
-        // console.log(allDivsSet);
+    // console.log(allDivsSet);
+
+    // Hitta den största räknaren (dvs den eller de siffror som repeteras flest gånger)
+    let maxCount = 0;
+    let mostRepeatedNumbers = [];
+
+    // loopar igenom objektet som innehåller alla nummer och hur många gånger vardera repeteras.
+    for (let number in numberCount) {
+        // [number] representerar värdet i den aktuella nycklen, som det brukar stå .number i annat fall. Om värdet är högre än maxCount ==>
+        if (numberCount[number] > maxCount) {
+            // så tilldelas maxCount det värdet.
+            maxCount = numberCount[number];
+            // och arrayen tilldelas endast den aktuella nycklen.
+            mostRepeatedNumbers = [number];
+            // annars om värdet är samma som maxCount, alltså vi har ett till nummer som repeteras samma antal gånger som det nummer som vi lagt till i arrayen så pushar vi in detta nummer i arrayen också!
+        } else if (numberCount[number] === maxCount) {
+            mostRepeatedNumbers.push(number);
+        }
+    }
+
+    // loopar igenom både divarna och arrayen med mest repeterade nummer för att lägga till en blå bakgrundsfärg på dessa divar.
+    for (let div of allDivs) {
+        for (let number of mostRepeatedNumbers) {
+            if (div.textContent == number) {
+                div.style.backgroundColor = "skyblue";
+            }
+        }
+        
+    }
     
 
     const allDivsArray = Array.from(allDivsSet);
     
-    console.log(allDivsArray);
     div2DOM.textContent = allDivsArray.join(", ");
+    div1DOM.textContent = `${mostRepeatedNumbers.join(", ")} (Repeated ${maxCount} times)`;
 });
