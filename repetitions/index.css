@@ -2,7 +2,12 @@
 #div1, #div2 {
     border: 2px solid saddlebrown;
     width: 600px;
+    
     border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+   padding: 10px;
 }
 
 #repetitions-box1, #repetitions-box2 {
