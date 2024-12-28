@@ -47,3 +47,6 @@ resetButtonDOM.addEventListener("click", function () {
 createButtonDOM.addEventListener("click", function () {
     copiesPDOM.textContent = "Click on a number to find copies";
 });
+
+const allDivs = document.querySelectorAll(".divis");
+console.log(allDivs)
