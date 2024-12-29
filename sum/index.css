@@ -1,0 +1,20 @@
+#div1, #div2 {
+    border: 2px solid saddlebrown;
+    width: 100px;
+
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    
+   padding: 10px;
+   background-color: rgb(252, 227, 206);
+}
+
+
+#sum-box1, #sum-box2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
