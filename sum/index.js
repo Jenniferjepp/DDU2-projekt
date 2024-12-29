@@ -1,16 +1,34 @@
 
+// funktion som räknar ut summan av alla nummer i divarna + skriver ut den i div1.
+function sumOfAll () {
+    const allDivs = document.querySelectorAll(".divis");
+
+    // gör om nodelistan med alla nummer till en array.
+    let allDivsArray = [];
+    for (let div of allDivs) {
+        allDivsArray.push(div.textContent);
+    }
+
+    // loopar igenom hela arrayen och för varje itteration plussas nummret med det som redan finns i "sum".
+    let sum = 0;
+    for (let i = 0; i < allDivsArray.length; i++) {
+        sum += Number(allDivsArray[i]);
+    }
+    // skriver ut den räknade summan i div1.
+    div1.textContent = sum;
+}
+
+
+
+const div1 = document.querySelector("#div1");
 const div2 = document.querySelector("#div2");
 div2.textContent = "-";
-
-// funktion som räknar ut summan av alla nummer i divarna
-
-
-
-
 
 const divsBoxDOM = document.querySelector("#divs-box");
 const resetButtonDOM = document.querySelector("#reset-button");
 
+
+// när någon div i containern "divsBox" klickas ==> de får grön backgrundsfärg.
 divsBoxDOM.addEventListener("click", function (eventObj) {
     if (eventObj.target.classList.contains("divis")) {
         eventObj.target.style.backgroundColor = "darkseagreen";
@@ -25,8 +43,15 @@ resetButtonDOM.addEventListener("click", function () {
         allDivs[i].style.backgroundColor = "";
     }
     // text i div2 går tillbaks till "-"
-    
+
 });
 
 // click event på divar
 
+// när "create"-kanppen klickas ==> funtionen som skriver ut summan anropas.
+createButtonDOM.addEventListener("click", function() {
+    sumOfAll();
+});
+
+// funktionen som räknar ihop och skriver ut den anropas inte förens divarna är skapade.
+window.addEventListener("load", sumOfAll);
