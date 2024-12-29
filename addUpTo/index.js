@@ -32,6 +32,9 @@ function TwoThatAddsUp(randomNumbersArray) {
 const addUpInputDOM = document.querySelector("#add-up-input");
 const adUpButtonDOM = document.querySelector("#ad-up-button");
 
+// value är en egentskap till input-elementet som i detta fall sätter texten i inputfältet till att vara 179 by default, när texten i rutan ändras gäller detta ej längre tills man laddar om sidan.
+addUpInputDOM.value = 179;
+
 // Event när knappen "Find Two Cells That Add Up" klickas på
 adUpButtonDOM.addEventListener("click", function() {
     // Vänta tills divarna är skapade innan vi försöker hitta matchande par

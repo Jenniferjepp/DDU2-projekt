@@ -45,6 +45,7 @@ const createButtonDOM = document.querySelector("#create-button");
 
 
 // Sätt standardvärde till 95 när sidan laddas
+// value är en egentskap till input-elementet som i detta fall sätter texten i inputfältet till att vara 95 by default, när texten i rutan ändras gäller detta ej längre tills man laddar om sidan.
 howManyInputDOM.value = 95;
 
 
