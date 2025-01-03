@@ -30,9 +30,14 @@ divsBoxDOM.addEventListener("click", function(eventObj) {
     if (eventObj.target.classList.contains("divis")) {
         if (eventObj.target.style.backgroundColor === "sandybrown") {
             eventObj.target.style.backgroundColor = "skyblue";
+
+            // Generera ett nytt slumpmässigt nummer mellan 1 och 99
+            const newRandomNumber = 1 + Math.floor(99 * Math.random());
+            eventObj.target.textContent = newRandomNumber;
         } else {
             eventObj.target.style.backgroundColor = "sandybrown";
             eventObj.target.textContent = "";
+            
         }
     }
 });
@@ -53,13 +58,18 @@ divsBoxDOM.addEventListener("mouseout", function(eventObj){
 
 // här ska eventet för knappen "clear-button" att ske
 clearButtonDOM.addEventListener("click", function() {
+    
     const allDivs = document.querySelectorAll(".divis");
     for (let i = 0; i < allDivs.length; i++) {
-        allDivs[i].style.backgroundColor = "";
+        if (allDivs[i].style.backgroundColor !== "") {
+            allDivs[i].style.backgroundColor = "";
+
+            // Generera ett nytt slumpmässigt nummer mellan 1 och 99
+            const newNumber = 1 + Math.floor(99 * Math.random());
+            allDivs[i].textContent = newNumber;
+        }
     }
 });
 
-
-// samt att klickad div ändrar random siffra
 
 
