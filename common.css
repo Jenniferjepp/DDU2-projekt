@@ -29,6 +29,12 @@ a:hover {
     justify-content: center;
     gap: 20px;
     margin-top: 50px;
+    font-family: Raleway;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(Raleway/Raleway-VariableFont_wght.ttf);
 }
 
 /* Första raden - how many numbers? */
