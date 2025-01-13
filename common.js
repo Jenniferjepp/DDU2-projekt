@@ -38,6 +38,17 @@ function createDivs (randomNumbersArray) {
 }
 
 
+const homeDiv = document.createElement("div");
+homeDiv.className = "link-box";
+const homeButton = document.createElement("a");
+homeButton.href = "../index.html"
+homeButton.textContent = "Home";
+homeButton.className = "links";
+
+document.body.prepend(homeDiv);
+homeDiv.prepend(homeButton);
+
+
 const divsBox = document.querySelector("#divs-box");
 const howManyInputDOM = document.querySelector("#how-many-input");
 const createButtonDOM = document.querySelector("#create-button");
