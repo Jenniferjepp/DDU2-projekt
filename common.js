@@ -6,11 +6,6 @@
 // funktion som returnerar en array med random siffror mellan 1-99, den blir så lång som värdet i input-fältet.
 
 
-let divisArray = [];
-let randomNumbersArray = [];
-
-let allDivis = [];
-
 
 function randomNumbers (min, max, amountNr) {
     randomNumbersArray = [];
@@ -34,7 +29,6 @@ function createDivs (randomNumbersArray) {
     }
     // Uppdatera allDivis efter att divarna har skapats
     allDivis = document.querySelectorAll(".divis");
-    
 }
 
 
@@ -54,7 +48,6 @@ const howManyInputDOM = document.querySelector("#how-many-input");
 const createButtonDOM = document.querySelector("#create-button");
 
 
-
 // Sätt standardvärde till 95 när sidan laddas
 // value är en egentskap till input-elementet som i detta fall sätter texten i inputfältet till att vara 95 by default, när texten i rutan ändras gäller detta ej längre tills man laddar om sidan.
 howManyInputDOM.value = 95;
@@ -65,7 +58,6 @@ createButtonDOM.addEventListener("click", function() {
     randomNumbersArray = randomNumbers(1, 99, parseInt(howManyInputDOM.value)); // parseInt konverterar strängen input värdet till att actually vara en siffra
     createDivs(randomNumbersArray);
 });
-
 
 
 // Event för att skapa divar direkt när sidan laddas

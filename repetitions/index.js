@@ -12,7 +12,6 @@ function everythingOnThisSite () {
         const number = div.textContent;
         allDivsSet.add(number);
 
-
          // Räkna förekomsten av varje siffra och lägger till varje siffra som nyckel och ökar värdet för varje kopia.
          if (numberCount[number]) {
             numberCount[number]++;
@@ -20,8 +19,6 @@ function everythingOnThisSite () {
             numberCount[number] = 1;
         }
     }
-    console.log(numberCount);
-    // console.log(allDivsSet);
 
     // Hitta den största räknaren (dvs den eller de siffror som repeteras flest gånger)
     let maxCount = 0;
@@ -48,9 +45,7 @@ function everythingOnThisSite () {
                 div.style.backgroundColor = "skyblue";
             }
         }
-        
     }
-    
 
     const allDivsArray = Array.from(allDivsSet);
     

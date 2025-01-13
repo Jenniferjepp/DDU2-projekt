@@ -49,4 +49,3 @@ createButtonDOM.addEventListener("click", function () {
 });
 
 const allDivs = document.querySelectorAll(".divis");
-console.log(allDivs)

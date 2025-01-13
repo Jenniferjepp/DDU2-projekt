@@ -30,26 +30,49 @@ const resetButtonDOM = document.querySelector("#reset-button");
 
 
 let allMarkedArray = [];
+// funktion för att kunna skapa ett klick event på divarna utan eventobjektet
+function addClickEventToDivis() {
+let allDivs = document.querySelectorAll(".divis");
+    for (let i = 0; i < allDivs.length; i++) {
+        let div = allDivs[i]; // Skapar blockscope
+        div.addEventListener("click", function () {
+            div.style.backgroundColor = "darkseagreen";
+
+            // pushar in alla markerade nummer i en array.
+            allMarkedArray.push(Number(div.textContent));
+
+            let sumOfMarked = 0;
+            for (let j = 0; j < allMarkedArray.length; j++) {
+                sumOfMarked += allMarkedArray[j];
+            }
+            div2.textContent = sumOfMarked;
+        });
+    }
+}
+
+
+
+
+/*
+let allMarkedArray = [];
 // när någon div i containern "divsBox" klickas ==> de får grön backgrundsfärg.
 divsBoxDOM.addEventListener("click", function (eventObj) {
     if (eventObj.target.classList.contains("divis")) {
         eventObj.target.style.backgroundColor = "darkseagreen";
     }
-    console.log(eventObj.target);
     
     // pushar in alla markerade nummer i en array.
     allMarkedArray.push(Number(eventObj.target.textContent));
-    console.log(allMarkedArray);
+
 
     // loopar igenom arrayen med alla markerade nummer och adderar dessa, summan sparas i variabeln "sumOfMarked" och det blir div2:s textcontent.
     let sumOfMarked = 0;
     for (let i = 0; i < allMarkedArray.length; i++) {
         sumOfMarked += allMarkedArray[i];
     }
-    console.log(sumOfMarked);
     div2.textContent = sumOfMarked;
 });
-
+*/
 
 // när "reset"-knappen klickas
 resetButtonDOM.addEventListener("click", function () {
@@ -60,7 +83,7 @@ resetButtonDOM.addEventListener("click", function () {
     }
     // text i div2 går tillbaks till "-"
     div2.textContent = "-";
-
+    allMarkedArray = [];
 });
 
 
@@ -68,7 +91,12 @@ resetButtonDOM.addEventListener("click", function () {
 createButtonDOM.addEventListener("click", function() {
     sumOfAll();
     div2.textContent = "-";
+    allMarkedArray = [];
+    addClickEventToDivis();
 });
 
 // funktionen som räknar ihop och skriver ut den anropas inte förens divarna är skapade.
-window.addEventListener("load", sumOfAll);
+window.addEventListener("load", function() {
+    sumOfAll();
+    addClickEventToDivis();
+});
